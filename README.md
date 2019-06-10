@@ -97,6 +97,23 @@ Restfull Micro-Service to support general commerce above TodaQ block-chain techn
 1. `환불(refund)`: Refund to credit.
 
 
+#### 쏘시오 결제 프로세스
+- 쏘시오 Front App 결제페이지에서 `포인트결제` 선택 후 결제버튼 클릭
+- `TodaQ Pay`(가제) 이동
+    - TodaQ Pay 이동 시 유저 및 결제정보 전달 with `JWT` or `session, cookie...`
+    - `id, name, telephone, address, total price` 등등
+- `TodaQ Pay`에서 해당 유저의 Passcode가 설정되어 있지 않으면
+    - Passcode 설정하는 화면으로 이동
+    - Passcode 설정 후 아래 프로세스 진행
+- `TodaQ Pay`에서 해당 유저의 Point 확인
+- (구매) Point가 결제금액보다 많으면, 결제 진행
+    - Passcode 입력 후 결제확인
+    - 쏘시오 Front App 이동 및 결제완료
+- (포인트충전) Point가 결제금액보다 적으면, Point 충전화면으로 이동
+    - *충전하시겠습니까?*
+    - PG 화면 노출(Iamport)
+    - 충전 완료 후, `(구매)` 화면으로 이동
+   
 
 ## 쿠폰 (Coupon)
 
